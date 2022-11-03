@@ -9,6 +9,12 @@ pipeline "test" {
 app "web" {
   build {
     use "docker" {}
+    registry {
+      use "docker" {
+        image = "ttl.sh/jgwhite-testing-web"
+        tag = "1h"
+      }
+    }
   }
 
   deploy {
